@@ -1,0 +1,47 @@
+<section class="toast-card sucess position" @shake *ngIf="toast.show && toast.type === 'sucess'" [ngClass]="{
+  'top': toast.positionVertical === 'top',
+  'bottom': toast.positionVertical === 'bottom',
+  'left': toast.positionHorizontal === 'left',
+  'rigth': toast.positionHorizontal === 'rigth'
+}">
+  <div class="text-container">
+    <i class='bx bxs-check-square'></i>
+    <div>
+      <h2>Sucesso</h2>
+      <p>{{ toast.message }}</p>
+    </div>
+  </div>
+  <hr [style]="'width: ' + progress + '%;'">
+</section>
+
+<section class="toast-card warning position" [@shake] *ngIf="toast.show && toast.type === 'warning'" [ngClass]="{
+  'top': toast.positionVertical === 'top',
+  'bottom': toast.positionVertical === 'bottom',
+  'left': toast.positionHorizontal === 'left',
+  'rigth': toast.positionHorizontal === 'rigth'
+}">
+  <div class="text-container">
+    <i class='bx bxs-error' ></i>
+    <div>
+      <h2>Atenção</h2>
+      <p>{{ toast.message }}</p>
+    </div>
+  </div>
+  <hr [style]="'width: ' + progress + '%;'">
+</section>
+
+<section class="toast-card error position" @shake *ngIf="toast.show && toast.type === 'error'" [ngClass]="{
+  'top': toast.positionVertical === 'top',
+  'bottom': toast.positionVertical === 'bottom',
+  'left': toast.positionHorizontal === 'left',
+  'rigth': toast.positionHorizontal === 'rigth'
+}">
+  <div class="text-container">
+    <i class='bx bxs-error-circle' ></i>
+    <div>
+      <h2>Sucesso</h2>
+      <p>{{ toast.message }}</p>
+    </div>
+  </div>
+  <hr [style]="'width: ' + progress + '%;'">
+</section>

@@ -1,0 +1,88 @@
+.toast-card {
+  background-color: #fff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+  width: 300px;
+
+  position: absolute;
+
+  &.position {
+    &.top {
+      top: 10px;
+    }
+
+    &.left {
+      left: 10px;
+    }
+
+    &.rigth {
+      right: 10px;
+    }
+
+    &.bottom {
+      bottom: 10px;
+    }
+  }
+
+  &.sucess {
+    border-left: 8px solid rgb(23, 185, 23);
+
+    i {
+      color: rgb(23, 185, 23);
+    }
+  }
+
+  &.warning {
+    border-left: 8px solid rgb(238, 180, 20);
+
+    i {
+      color: rgb(238, 180, 20);
+    }
+  }
+
+  &.error {
+    border-left: 8px solid rgb(247, 84, 39);
+
+    i {
+      color: rgb(247, 84, 39);
+    }
+  }
+
+  i {
+    font-size: 32px;
+  }
+
+  border-radius: 5px;
+
+  padding: 0;
+  margin: 0;
+
+  .text-container {
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+
+    align-items: center;
+    padding: 10px;
+
+    h2 {
+      font-size: 16px;
+      // color: $focus-color;
+      font-weight: 500;
+      margin: 0 0 0 10px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  hr {
+    // background-color: $bgButton;
+    height: 4px;
+    border: none;
+  }
+}
