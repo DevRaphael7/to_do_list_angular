@@ -14,6 +14,11 @@ export type ToastType = 'warning' | 'sucess' | 'error'
 export type ToastVerticalType = 'top' | 'middle' | 'bottom'
 export type ToastHorizontalType = 'left' | 'middle' | 'rigth'
 
+export interface FormStoreI {
+  validated: boolean
+}
+
 export interface StoreI {
-  ux: UxStoreI
+  ux: UxStoreI,
+  form: FormStoreI
 }

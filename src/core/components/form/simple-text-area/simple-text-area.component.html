@@ -1,0 +1,11 @@
+<div class="input-box {{required && 'error'}}">
+    <label>{{ inputData?.props.label }}</label>
+    <textarea
+      #valTA
+      name="{{inputData?.getId}}"
+      id="{{inputData?.getId}}"
+      placeholder="{{inputData?.props.placeholder}}"
+      [value]="inputData?.props.value"
+      (keyup)="send(valTA.value, inputData?.getId)"></textarea>
+    <span>{{ inputData?.props.errorM }}</span>
+</div>

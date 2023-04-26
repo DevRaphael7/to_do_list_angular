@@ -1,0 +1,93 @@
+$text-color: #56537f;
+$focus-color: #1644db;
+$bg-input-form: rgba(204, 204, 204, 0.7);
+$REQUIRED_COLOR: rgb(204, 35, 67);
+
+$bgButton: rgb(65, 114, 245);
+$bgButtonH: rgb(93, 135, 250);
+
+@mixin inputStyle($radius: 5px) {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: $radius;
+    background-color: $bg-input-form;
+    border: 2px solid #c4cae0;
+    margin-top: 5px;
+    padding: 10px 10px;
+
+    &:focus{
+        outline: none;
+        border-color: $focus-color;
+        box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    }
+}
+
+@mixin labelStyle() {
+    color: $text-color;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@mixin textAreaStyle() {
+    @include inputStyle();
+
+    resize: vertical;
+    min-height: 50px;
+    max-height: 144px;
+}
+
+@mixin searchBarInput {
+    .input-group {
+        @include inputStyle(1rem);
+
+        width: 10%;
+        height: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: 0.8s;
+
+        &:hover {
+            width: 15%;
+        }
+
+        input {
+            border-radius: 5px;
+            width: 100%;
+            padding: 0.50rem 0.3rem;
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            transition: .2s;
+        }
+    }
+}
+
+@mixin autoComplete() {
+  background: $bg-input-form;
+  max-height: 140px;
+  overflow-y: auto; /* Vai retirar as bolinhas da tag <li> */
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+
+  position: absolute;
+  width: 100%;
+
+  li {
+      list-style: none;
+      padding: 10px 20px;
+
+      &:hover {
+          background: #efefef;
+          cursor: pointer;
+      }
+  }
+
+  .hide {
+    background: transparent;
+  }
+}

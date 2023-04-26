@@ -1,7 +1,9 @@
+import { FormReducer } from "./reducers/form.reducer";
 import { UxReducer } from "./reducers/ux.reducer";
 
 const StoreReducer = {
-  ux: UxReducer
+  ux: UxReducer,
+  form: FormReducer
 }
 
 export { StoreReducer }

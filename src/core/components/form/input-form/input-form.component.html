@@ -1,0 +1,15 @@
+<div class="input-box {{ required && 'error' }}">
+    <label>{{ inputData?.props.label }} <b class="reque" *ngIf="inputData?.props.required">*</b></label>
+    <input
+        #inputV
+        type="{{ inputData?.props.type }}"
+        id="{{ inputData?.getId }}"
+        placeholder="{{inputData?.props.placeholder}}"
+        (keyup)="send(inputV.value, inputData?.getId)"
+        (change)="send(inputV.value, inputData?.getId)"
+        [value]="inputData?.props.value"
+    >
+    <span *ngIf="inputData?.props.errorM">{{ inputData?.props.errorM }}</span>
+</div>
+
+

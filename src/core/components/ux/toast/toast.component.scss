@@ -1,3 +1,5 @@
+@import '/src/styles/colors.scss';
+
 .toast-card {
   background-color: #fff;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -68,7 +70,7 @@
 
     h2 {
       font-size: 16px;
-      // color: $focus-color;
+      color: $primary-color;
       font-weight: 500;
       margin: 0 0 0 10px;
     }
@@ -81,7 +83,7 @@
   }
 
   hr {
-    // background-color: $bgButton;
+    background-color: $primary-color;
     height: 4px;
     border: none;
   }

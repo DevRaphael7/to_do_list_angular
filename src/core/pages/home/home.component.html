@@ -1,2 +1,14 @@
-<app-toast></app-toast>
-<h1>Tela principal</h1>
+
+<section class="form-container">
+  <app-input-form
+    [inputData]="form.inputFields.get('Nome')"
+    (values)="setCampos = $event"
+  ></app-input-form>
+  <app-simple-text-area
+    [inputData]="form.inputFields.get('Desc')"
+    (values)="setCampos = $event"
+  ></app-simple-text-area>
+  <app-simple-button [customStyles]="'width: 200px'" (putEvent)="send()">
+    Submit
+  </app-simple-button>
+</section>

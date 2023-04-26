@@ -1,0 +1,39 @@
+@import "../form.scss";
+
+.input-box {
+    transition: all 0.5s ease;
+
+    label {
+        @include labelStyle();
+
+        .reque {
+            color: $REQUIRED_COLOR;
+        }
+    }
+
+    input {
+        @include inputStyle();
+    }
+
+    i {
+        font-size: 24px;
+        color: red;
+    }
+
+    &.error {
+        input {
+            border: 1px solid $REQUIRED_COLOR;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    span {
+        color: $REQUIRED_COLOR;
+        font-weight: bold;
+        font-size: 12px;
+        display: none;
+    }
+}

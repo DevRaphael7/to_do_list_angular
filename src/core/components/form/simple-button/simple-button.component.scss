@@ -1,0 +1,16 @@
+@import "../form.scss";
+
+button {
+    border: none;
+    padding: 10px 20px;
+    background: $bgButton;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+button:hover{
+    background: $bgButtonH;
+    cursor: pointer;
+}

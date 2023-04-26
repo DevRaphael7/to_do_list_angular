@@ -1,0 +1,62 @@
+@import "../form.scss";
+
+.search-input{
+    position: relative;
+    width: 100%;
+
+    &.none{
+        display: none;
+    }
+
+    label {
+        @include labelStyle()
+    }
+
+    input{ /* Barra de pesquisa */
+        @include inputStyle(none);
+    }
+
+    span {
+      display: none;
+      color: $REQUIRED_COLOR;
+    }
+
+    &.error {
+      input {
+          border: 1px solid $REQUIRED_COLOR;
+      }
+
+      span {
+          display: block;
+      }
+    }
+
+    .icon {
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        font-size: 20px;
+        color: var(--primary-color);
+        cursor: pointer;
+
+        &:hover{
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary-color);
+            color: #fff;
+            transition: 0.5s;
+            border-radius: 0 1.02rem 1.02rem 0;
+        }
+    }
+
+    .autocom-box {
+        @include autoComplete;
+    }
+}
+
+.hide{
+    opacity: 0;
+}

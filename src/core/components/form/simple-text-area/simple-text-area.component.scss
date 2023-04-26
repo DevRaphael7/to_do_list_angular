@@ -1,0 +1,36 @@
+@import "../form.scss";
+
+$REQUIRED_COLOR: rgb(204, 35, 67);
+
+.input-box {
+    transition: all 0.5s ease;
+
+    label {
+        @include labelStyle();
+
+        .reque {
+            color: $REQUIRED_COLOR;
+        }
+    }
+
+    textarea {
+        @include textAreaStyle();
+    }
+
+    &.error {
+        textarea {
+            border: 1px solid $REQUIRED_COLOR;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    span {
+        color: $REQUIRED_COLOR;
+        font-weight: bold;
+        font-size: 12px;
+        display: none;
+    }
+}

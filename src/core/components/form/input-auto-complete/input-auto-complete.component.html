@@ -1,0 +1,15 @@
+
+<div class="search-input" [class.error]="required">
+    <label>{{ inputData?.props.label }} <span>{{ inputData?.props.errorM }}</span> </label>
+    <input #val type="text" placeholder="Informação a pesquisar" (keyup)="search(val.value)" [value]="getFieldInput">
+    <div
+        class="autocom-box" >
+        <li *ngFor="let val of getFilterMap | keyvalue; let i = index"  (click)="selectValFilterMap(val.key)">
+          {{val.value}}
+        </li>
+    </div>
+    <div class="icon">
+        <i class="fa fa-search"></i>
+    </div>
+</div>
+
