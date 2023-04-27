@@ -1,14 +1,22 @@
 
 <section class="form-container">
-  <app-input-form
-    [inputData]="form.inputFields.get('Nome')"
-    (values)="setCampos = $event"
-  ></app-input-form>
-  <app-simple-text-area
-    [inputData]="form.inputFields.get('Desc')"
-    (values)="setCampos = $event"
-  ></app-simple-text-area>
-  <app-simple-button [customStyles]="'width: 200px'" (putEvent)="send()">
-    Submit
+  <app-simple-button [customStyles]="'width: 200px'" (putEvent)="openForm()">
+    Nova tarefa
   </app-simple-button>
+  <app-alert key="form-tarefa">
+    <ng-container id="mdl" class="form-container">
+      <app-input-form
+        [inputData]="forms['Tarefa'].props.get('Nome')"
+        (values)="setCampos = $event"
+      ></app-input-form>
+      <app-simple-text-area
+        [inputData]="forms['Tarefa'].props.get('Desc')"
+        (values)="setCampos = $event"
+      ></app-simple-text-area>
+      <app-simple-button [customStyles]="'width: 200px'" (putEvent)="send()">
+        Submit
+      </app-simple-button>
+    </ng-container>
+  </app-alert>
+
 </section>

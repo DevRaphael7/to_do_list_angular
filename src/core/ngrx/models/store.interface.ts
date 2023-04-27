@@ -1,5 +1,6 @@
 export interface UxStoreI {
   toast: ToastStoreI
+  alert: { [key: string]: boolean }
 }
 
 export interface ToastStoreI {

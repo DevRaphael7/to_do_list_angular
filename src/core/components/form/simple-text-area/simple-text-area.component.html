@@ -1,4 +1,4 @@
-<div class="input-box {{required && 'error'}}">
+<div class="input-box {{(required && !input) && 'error'}}">
     <label>{{ inputData?.props.label }}</label>
     <textarea
       #valTA

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StoreI } from '../../../ngrx/models/store.interface';
-import { InputEntity } from 'src/core/entities/input.entity';
+import { InputModel } from 'src/core/models/input.model';
 
 @Component({
   selector: 'app-input-auto-complete',
@@ -12,9 +12,9 @@ export class InputAutoCompleteComponent implements OnInit {
 
   @Input() values: Map<string, string> = new Map();
   @Input() initialValue = ""
-  @Input() inputData?: InputEntity
+  @Input() inputData?: InputModel
   //Atributo usado para identificar a chave do valor
-  @Output() formData = new EventEmitter<{ key: string | number, e: any }>()
+  @Output() formData = new EventEmitter<{ key: string | number, e: string | number }>()
 
   private fieldInput = ""
   private filterMap = new Map<string, string>();

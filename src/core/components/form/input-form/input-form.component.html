@@ -1,4 +1,4 @@
-<div class="input-box {{ required && 'error' }}">
+<div class="input-box {{ (required && !input) && 'error' }}">
     <label>{{ inputData?.props.label }} <b class="reque" *ngIf="inputData?.props.required">*</b></label>
     <input
         #inputV
@@ -9,7 +9,7 @@
         (change)="send(inputV.value, inputData?.getId)"
         [value]="inputData?.props.value"
     >
-    <span *ngIf="inputData?.props.errorM">{{ inputData?.props.errorM }}</span>
+    <span *ngIf="inputData?.props.errorM && !input">{{ inputData?.props.errorM }}</span>
 </div>
 
 

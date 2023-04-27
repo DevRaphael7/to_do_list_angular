@@ -5,6 +5,7 @@ import { InputFormComponent } from "./form/input-form/input-form.component";
 import { InputAutoCompleteComponent } from "./form/input-auto-complete/input-auto-complete.component";
 import { SimpleButtonComponent } from "./form/simple-button/simple-button.component";
 import { SimpleTextAreaComponent } from "./form/simple-text-area/simple-text-area.component";
+import { AlertComponent } from "./ux/alert/alert.component";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { SimpleTextAreaComponent } from "./form/simple-text-area/simple-text-are
     InputFormComponent,
     InputAutoCompleteComponent,
     SimpleButtonComponent,
-    SimpleTextAreaComponent
+    SimpleTextAreaComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule
@@ -22,7 +24,8 @@ import { SimpleTextAreaComponent } from "./form/simple-text-area/simple-text-are
     InputFormComponent,
     InputAutoCompleteComponent,
     SimpleButtonComponent,
-    SimpleTextAreaComponent
+    SimpleTextAreaComponent,
+    AlertComponent
   ]
 })
 export class ComponentsModule { }

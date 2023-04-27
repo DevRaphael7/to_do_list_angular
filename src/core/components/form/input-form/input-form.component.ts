@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { StoreI } from '../../../ngrx/models/store.interface';
 import { Store } from '@ngrx/store';
 import { pulseOnEnterAnimation } from 'angular-animations';
-import { InputEntity } from 'src/core/entities/input.entity';
+import { InputModel } from 'src/core/models/input.model';
 
 @Component({
   selector: 'app-input-form',
@@ -14,7 +14,7 @@ import { InputEntity } from 'src/core/entities/input.entity';
 })
 export class InputFormComponent {
 
-  @Input() inputData: InputEntity;
+  @Input() inputData: InputModel;
   @Output() values = new EventEmitter<{ key: string | number, e: string | number}>()
 
   required = false
@@ -30,7 +30,7 @@ export class InputFormComponent {
     })
   }
 
-  send(e: any, key: string | number | undefined) {
+  send(e: string, key: string | number) {
     const chave = String(key)
     this.input = e
     this.values.emit({ e, key: chave })

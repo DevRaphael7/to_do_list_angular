@@ -1,0 +1,19 @@
+<span
+  class="overlay"
+  [class.show]='showAlert'
+  [class.bgDark]="showOverlay"
+>
+</span>
+<div class="modal-box"
+  [style.background]="bgModal"
+  [style.borderRadius]="borderRadius"
+  [class.show]='showAlert'
+>
+  <ng-content select="#mdl"></ng-content>
+</div>
+
+<div class="btn-close-modal" *ngIf="showAlert">
+  <app-simple-button customStyles="width: 80px; position: absolute; top: 10px; right: 10px;" (click)="closeAlert()">
+    Fechar
+  </app-simple-button>
+</div>
