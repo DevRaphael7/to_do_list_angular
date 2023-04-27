@@ -6,6 +6,8 @@ $REQUIRED_COLOR: rgb(204, 35, 67);
 $bgButton: rgb(65, 114, 245);
 $bgButtonH: rgb(93, 135, 250);
 
+@import '/src/styles/colors.scss';
+
 @mixin inputStyle($radius: 5px) {
     width: 100%;
     padding: 8px 10px;

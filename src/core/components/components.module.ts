@@ -6,6 +6,10 @@ import { InputAutoCompleteComponent } from "./form/input-auto-complete/input-aut
 import { SimpleButtonComponent } from "./form/simple-button/simple-button.component";
 import { SimpleTextAreaComponent } from "./form/simple-text-area/simple-text-area.component";
 import { AlertComponent } from "./ux/alert/alert.component";
+import { TabNavigationComponent } from "./ux/tab-navigation/tab-navigation.component";
+import { SelectComponent } from "./form/select/select.component";
+import { TableTaskComponent } from '../components/table-task/table-task.component';
+import { CardComponent } from "./ux/card/card.component";
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { AlertComponent } from "./ux/alert/alert.component";
     InputAutoCompleteComponent,
     SimpleButtonComponent,
     SimpleTextAreaComponent,
-    AlertComponent
+    AlertComponent,
+    TabNavigationComponent,
+    SelectComponent,
+    TableTaskComponent,
+    CardComponent
   ],
   imports: [
     CommonModule
@@ -25,7 +33,10 @@ import { AlertComponent } from "./ux/alert/alert.component";
     InputAutoCompleteComponent,
     SimpleButtonComponent,
     SimpleTextAreaComponent,
-    AlertComponent
+    AlertComponent,
+    TabNavigationComponent,
+    TableTaskComponent,
+    CardComponent
   ]
 })
 export class ComponentsModule { }

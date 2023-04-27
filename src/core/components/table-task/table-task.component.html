@@ -1,0 +1,22 @@
+<section>
+
+  <div class="row-week">
+    <div *ngFor="let week of dateUtil.allStrWeek()">
+      <p>{{week}}</p>
+      <app-card
+        [title]="'Exemplo de Card'"
+        [description]="'Descrição do card'"
+        class="card-task"
+      ></app-card>
+    </div>
+  </div>
+
+  <div class="column-hour">
+    <p
+      *ngFor="let time of dateUtil.hours('08:00', '20:00')"
+      class="{{ time < dateUtil.currentHour().join(':') && 'disable'}}"
+      >
+      {{ time }}
+    </p>
+  </div>
+</section>

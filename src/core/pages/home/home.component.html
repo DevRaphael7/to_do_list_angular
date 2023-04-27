@@ -1,8 +1,21 @@
 
-<section class="form-container">
-  <app-simple-button [customStyles]="'width: 200px'" (putEvent)="openForm()">
+<section>
+
+  <header>
+    <p>To Do List</p>
+
+    <app-simple-button [customStyles]="'width: 200px'" (putEvent)="openForm()">
+      Nova tarefa
+    </app-simple-button>
+  </header>
+
+  <app-tab-navigation></app-tab-navigation>
+
+  <app-table-task></app-table-task>
+
+  <!-- <app-simple-button [customStyles]="'width: 200px'" (putEvent)="openForm()">
     Nova tarefa
-  </app-simple-button>
+  </app-simple-button> -->
   <app-alert key="form-tarefa">
     <ng-container id="mdl" class="form-container">
       <app-input-form

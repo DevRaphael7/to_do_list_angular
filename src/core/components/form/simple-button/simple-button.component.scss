@@ -1,9 +1,10 @@
 @import "../form.scss";
+@import '/src/styles/colors.scss';
 
 button {
     border: none;
     padding: 10px 20px;
-    background: $bgButton;
+    background: $primary-color;
     color: #fff;
     border-radius: 5px;
     font-weight: bold;
@@ -11,6 +12,6 @@ button {
 }
 
 button:hover{
-    background: $bgButtonH;
+    background: $secondary-color;
     cursor: pointer;
 }
