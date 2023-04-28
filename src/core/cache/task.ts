@@ -32,7 +32,7 @@ export class TaskDB {
     return tasks.size
   }
 
-  setMarginTopVertical(hour = '08:00') {
+  private setMarginTopVertical(hour = '08:00') {
     let marginProp = 38;
 
     let initialHour = 8
@@ -45,7 +45,7 @@ export class TaskDB {
     return marginProp;
   }
 
-  setMarginRightHorizontal(date = '28/04/2023') {
+  private setMarginRightHorizontal(date = '28/04/2023') {
     let marginProp = 0;
 
     const getDate = Number(date.slice(3, 4))

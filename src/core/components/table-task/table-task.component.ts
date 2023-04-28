@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskDB } from 'src/core/cache/task';
-import { TaskI } from 'src/core/entities/task.entity';
 import { DateUtil } from 'src/core/services/date-util/date-util.service';
 
 @Component({

@@ -1,6 +1,7 @@
 .overlay {
   position: absolute;
-  width: 100%;
+  min-width: 100%;
+  width: auto;
   height: 100%;
   top: 0;
   left: 0;
@@ -32,6 +33,10 @@
   transform: translate(-50%, -50%);
 
   display: none;
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
+  }
 
   .btn-close-modal {
     width: 100%;
