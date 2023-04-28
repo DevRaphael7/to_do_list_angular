@@ -12,10 +12,13 @@ $bgButtonH: rgb(93, 135, 250);
     width: 100%;
     padding: 8px 10px;
     border-radius: $radius;
-    background-color: $bg-input-form;
-    border: 2px solid #c4cae0;
+    background-color: #fff;
+    border: 2px solid #E7EAED;
     margin-top: 5px;
-    padding: 10px 10px;
+
+    &::placeholder {
+      color: #B7BBC4;
+    }
 
     &:focus{
         outline: none;
@@ -25,9 +28,9 @@ $bgButtonH: rgb(93, 135, 250);
 }
 
 @mixin labelStyle() {
-    color: $text-color;
-    font-size: 16px;
-    font-weight: bold;
+    color: $text-weak-color;
+    font-size: 12px;
+    font-weight: 600;
 }
 
 @mixin textAreaStyle() {

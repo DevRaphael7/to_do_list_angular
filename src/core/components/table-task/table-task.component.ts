@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TaskDB } from 'src/core/cache/task';
+import { TaskI } from 'src/core/entities/task.entity';
 import { DateUtil } from 'src/core/services/date-util/date-util.service';
 
 @Component({
@@ -6,11 +8,13 @@ import { DateUtil } from 'src/core/services/date-util/date-util.service';
   templateUrl: './table-task.component.html',
   styleUrls: ['./table-task.component.scss']
 })
-export class TableTaskComponent {
+export class TableTaskComponent implements OnInit {
 
   dateUtil: DateUtil;
+  taskDb: TaskDB;
 
-  constructor() {
-    this.dateUtil = DateUtil.create()
+  ngOnInit(): void {
+    this.dateUtil = DateUtil.create();
+    this.taskDb = new TaskDB()
   }
 }

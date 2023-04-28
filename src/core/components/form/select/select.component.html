@@ -1,10 +1,10 @@
 <div class="dropdown">
   <div class="select {{ getOpen && 'select-clicked' }}" (click)="openMenu()">
-    <span class="selected">{{ OptionSelected ? OptionSelected : placeholder }}</span>
-    <div class="caret {{ getOpen && 'caret-rotate' }}"></div>
+    <span class="selected">{{ OptionSelected ? OptionSelected : inputData.props.label }}</span>
+    <i class="fa-solid fa-angle-down"></i>
   </div>
   <ul class="menu {{ getOpen && 'open' }}">
-    <li *ngFor="let val of values; let i = index" (click)="selectOption(val)">{{ val }}</li>
+    <li *ngFor="let val of listaDeValores; let i = index" (click)="selectOption(val)">{{ val }}</li>
   </ul>
 </div>
 

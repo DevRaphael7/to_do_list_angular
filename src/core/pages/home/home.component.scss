@@ -1,7 +1,6 @@
 @import '/src/styles/colors.scss';
 
-
-* {
+section{
   overflow: hidden;
 }
 
@@ -10,11 +9,25 @@ header {
 
   display: flex;
   justify-content: space-between;
+}
 
-  p {
-    font-size: 24px;
-    color: $text-big-color;
-    font-weight: bold;
-    letter-spacing: 5px;
+.new_task_button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  padding: 0 15px;
+
+  span {
+    font-weight: 200;
+    font-size: 12px;
   }
+}
+
+.text-head {
+  font-size: 24px;
+  color: $text-big-color;
+  font-weight: 600;
+  letter-spacing: 5px;
 }

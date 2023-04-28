@@ -3,11 +3,15 @@
   <div class="row-week">
     <div *ngFor="let week of dateUtil.allStrWeek()">
       <p>{{week}}</p>
-      <app-card
-        [title]="'Exemplo de Card'"
-        [description]="'Descrição do card'"
-        class="card-task"
-      ></app-card>
+      <div *ngFor="let task of taskDb.getTasks() | keyvalue">
+        <app-card
+          *ngIf="task.value.weekStr === week"
+          [title]="task.value.name"
+          [description]="task.value.desc"
+          class="card-task"
+          [style]="'margin-top: ' + task.value.verticalMargin + 'margin-right: ' + task.value.horizontalMargin"
+        ></app-card>
+      </div>
     </div>
   </div>
 

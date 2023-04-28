@@ -2,10 +2,10 @@ import { ModelMain } from "./model.main";
 
 type InputI = {
   label: string;
-  type: "text" | "textarea" | "password" | "phone" | "date" | "email";
-  placeholder: string;
+  type: "text" | "textarea" | "password" | "phone" | "date" | "email" | 'select';
+  placeholder?: string;
   name?: string;
-  value: string | number | Date;
+  value: string | number | Date | string[] | Set<string>;
   errorM?: string;
   indexStep?: number //Atributo usado para identificar a página no FormStep
   required?: boolean

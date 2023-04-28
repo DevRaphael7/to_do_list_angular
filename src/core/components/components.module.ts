@@ -36,7 +36,8 @@ import { CardComponent } from "./ux/card/card.component";
     AlertComponent,
     TabNavigationComponent,
     TableTaskComponent,
-    CardComponent
+    CardComponent,
+    SelectComponent,
   ]
 })
 export class ComponentsModule { }

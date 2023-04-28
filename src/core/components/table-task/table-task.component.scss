@@ -2,7 +2,7 @@
 
 section {
   width: 100%;
-  height: 82vh;
+  height: 40%;
 
   position: relative;
 
@@ -15,7 +15,6 @@ section {
   .row-week {
     display: flex;
     flex-direction: row;
-    width: 100%;
 
     margin-left: 5rem;
 
@@ -24,20 +23,17 @@ section {
       font-weight: bold;
       letter-spacing: 2px;
 
-      margin-right: 8.5rem;
+      margin-right: 8rem;
     }
   }
 
   .column-hour {
-    margin-top: 40px;
     min-height: 100%;
 
     p {
       font-size: 12px;
       font-weight: bold;
-      margin: 0 0 38px 0;
-
-      margin-right: 20px;
+      margin-top: 38px;
 
       &.disable {
         color: #E0E2E8;
@@ -48,4 +44,12 @@ section {
   .card-task {
     position: absolute;
   }
+}
+
+.margin-08 {
+  margin-top: 38px;
+}
+
+.margin-09 {
+  margin-top: 10px;
 }

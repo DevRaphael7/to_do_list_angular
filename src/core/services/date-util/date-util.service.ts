@@ -52,4 +52,19 @@ export class DateUtil {
   allStrWeek() {
     return ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
   }
+
+  getDayStrByDayNumber(arg: number) {
+    return this.allStrWeek()[arg]
+  }
+
+  allDaysOfCurrentMouth() {
+    const days = new Set<string>()
+    const lastDay = this.lastDayOfCurrentMouth()
+
+    for(let i = 1; i <= lastDay; i++) {
+      days.add(String(i))
+    }
+
+    return days;
+  }
 }

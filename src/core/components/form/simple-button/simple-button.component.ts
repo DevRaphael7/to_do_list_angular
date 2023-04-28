@@ -12,6 +12,7 @@ import { rubberBandOnEnterAnimation } from 'angular-animations';
 export class SimpleButtonComponent {
 
   @Input() customStyles = ''
+  @Input() cancelBtn = false
   @Output() putEvent = new EventEmitter<void>()
 
   put() {

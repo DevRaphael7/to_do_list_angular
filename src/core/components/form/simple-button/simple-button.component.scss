@@ -1,4 +1,3 @@
-@import "../form.scss";
 @import '/src/styles/colors.scss';
 
 button {
@@ -9,9 +8,22 @@ button {
     border-radius: 5px;
     font-weight: bold;
     width: 100%;
-}
+    max-height: 132px;
 
-button:hover{
-    background: $secondary-color;
-    cursor: pointer;
+    &:hover{
+      background: $secondary-color;
+      cursor: pointer;
+    }
+
+    &.cancel {
+      background-color: #fff;
+      border: 1px solid $border-weak;
+
+      color: $text-weak-color;
+
+      &:hover{
+        background: #fff;
+        cursor: pointer;
+      }
+    }
 }

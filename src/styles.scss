@@ -12,3 +12,18 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.row {
+  display: flex;
+}
+
+#filterGroup {
+  @extend .row;
+}
+
+#btn-content {
+  @extend .row;
+  position: absolute;
+  bottom: 10px; right: 10px;
+  gap: 10px;
+}

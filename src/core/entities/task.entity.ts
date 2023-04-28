@@ -1,8 +1,10 @@
 import { Entity } from "./entity.main";
 
-interface TaskI {
+export interface TaskI {
   name: string;
   desc: string;
+  hour: string;
+  date: string;
 }
 
 export class TaskEntity extends Entity<TaskI> {

@@ -16,6 +16,8 @@ export class AlertComponent implements OnInit {
   @Input() key = ''
   @Input() showOverlay = false
 
+  @Input() styles = ''
+
   showAlert = false
 
   constructor(private store: Store<StoreI>) { }

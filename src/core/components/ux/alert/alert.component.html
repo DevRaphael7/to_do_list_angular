@@ -8,8 +8,13 @@
   [style.background]="bgModal"
   [style.borderRadius]="borderRadius"
   [class.show]='showAlert'
+  [style]="styles"
 >
   <ng-content select="#mdl"></ng-content>
+
+  <div class="row btns-group">
+    <ng-content select="#btn-content"></ng-content>
+  </div>
 </div>
 
 <div class="btn-close-modal" *ngIf="showAlert">

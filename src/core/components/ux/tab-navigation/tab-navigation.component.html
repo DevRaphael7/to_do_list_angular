@@ -11,15 +11,6 @@
   </div>
 
   <div class="filter-group">
-    <app-select
-      [keyIdentify]="'filter-weak'"
-      [placeholder]="'Semana'"
-      [values]="weakSelect"
-    ></app-select>
-    <app-select
-      [keyIdentify]="'filter-day'"
-      [placeholder]="'Dia'"
-      [values]="daySelect"
-    ></app-select>
+    <ng-content select="#filterGroup"></ng-content>
   </div>
 </div>
