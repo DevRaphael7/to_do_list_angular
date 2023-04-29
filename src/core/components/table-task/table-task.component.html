@@ -1,17 +1,23 @@
 <section>
-
   <div class="row-week">
-    <div *ngFor="let week of dateUtil.allStrWeek()">
-      <p>{{week}}</p>
-      <div *ngFor="let task of taskDb.getTasks() | keyvalue">
+    <div *ngFor="let day of dateUtil.allDaysOfCurrentMouth()" class="column">
+      <p>{{day}}</p>
+      <div style="position: relative;">
         <app-card
-          *ngIf="task.value.weekStr === week"
+          *ngFor="let task of taskDb.getTasks() | keyvalue"
+          [hidden]="task.value.day !== day"
           [title]="task.value.name"
           [description]="task.value.desc"
+          type="Python"
           class="card-task"
-          [style]="'margin-top: ' + task.value.verticalMargin + 'margin-right: ' + task.value.horizontalMargin"
-        ></app-card>
+          [style]="'margin-top: ' + task.value.y"
+        >
+          <div id="infos-card">
+            <p>{{task.value.hour}} - {{task.value.weekStr}} de {{task.value.date.split('/')[2]}}. <b>{{ task.value.diff }}</b></p>
+          </div>
+        </app-card>
       </div>
+      <div class="row-divider"></div>
     </div>
   </div>
 

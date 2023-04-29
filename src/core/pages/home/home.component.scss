@@ -1,7 +1,9 @@
 @import '/src/styles/colors.scss';
 
 section{
-  overflow: hidden;
+  overflow: hidden !important;
+
+  width: 100%;
 }
 
 header {

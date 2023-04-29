@@ -55,10 +55,24 @@ export class HomeComponent extends PageMain {
     this.forms["Tarefa"].props.set('Semana', InputModel.create({
       label: 'Semana',
       type: 'select',
-      value: this.dateUtil.allStrWeek(),
+      value: this.dateUtil.allStrWeek()
+    }, 'Semana'))
+
+    this.forms["Tarefa"].props.set('Mês', InputModel.create({
+      label: 'Mês',
+      type: 'select',
+      value: this.dateUtil.allMouth(),
       errorM: 'Campo de seleção não informado.',
       required: true
-    }, 'Semana'))
+    }, 'Mês'))
+
+    this.forms["Tarefa"].props.set('Horas', InputModel.create({
+      label: 'Horas',
+      type: 'select',
+      value: this.dateUtil.hours('08:00', '20:00'),
+      errorM: 'Campo de seleção não informado.',
+      required: true
+    }, 'Horas'))
 
     this.campos = this.forms["Tarefa"].createValuesFields()
 
@@ -66,10 +80,16 @@ export class HomeComponent extends PageMain {
   }
 
   saveTaskDb() {
+    const mes = this.dateUtil.getNumberMouthByText(this.campos.get('Mês'))
+
     const task = {
-      date: new Date().toISOString().slice(0, 10).split("-").reverse().join("/"),
+      date: new Date(
+        new Date().getFullYear(),
+        mes - 1,
+        Number(this.campos.get('Dia'))
+      ).toISOString().slice(0, 10).split("-").reverse().join("/"),
       desc: this.campos.get('Desc'),
-      hour: DateUtil.create().currentHour().join(":"),
+      hour: this.campos.get('Horas'),
       name: this.campos.get('Nome')
     }
 
@@ -81,7 +101,9 @@ export class HomeComponent extends PageMain {
   }
 
   send() {
-    if(this.forms["Tarefa"].validator(this.campos)) {
+    const status = this.forms["Tarefa"].validator(this.campos)
+
+    if(status) {
       this.ux.form.emitterForm(true)
     } else {
       this.saveTaskDb()

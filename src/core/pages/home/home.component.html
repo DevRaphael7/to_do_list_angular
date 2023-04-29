@@ -3,7 +3,7 @@
 
   <header>
     <p class="text-head">To Do List</p>
-    <app-simple-button [customStyles]="'width: 200px'" (putEvent)="openForm()">
+    <app-simple-button [customStyles]="'width: 132px'" (putEvent)="openForm()">
       <div class="new_task_button">
         <i class="fa-solid fa-plus"></i>
         <span>Nova tarefa</span>
@@ -13,10 +13,18 @@
 
   <app-tab-navigation>
     <div id="filterGroup">
-      <app-select [inputData]="forms['Tarefa'].props.get('Dia')"></app-select>
-      <app-select [inputData]="forms['Tarefa'].props.get('Semana')"></app-select>
+      <app-select
+        [inputData]="forms['Tarefa'].props.get('Dia')"
+        (selected)="setCampos = $event"
+      ></app-select>
+      <app-select
+        [inputData]="forms['Tarefa'].props.get('Semana')"
+        (selected)="setCampos = $event"
+      ></app-select>
     </div>
   </app-tab-navigation>
+
+  <div style="margin: 20px;"></div>
 
   <app-table-task></app-table-task>
 
@@ -31,8 +39,18 @@
       <p class="text-head">Nova Tarefa</p>
 
       <div class="row responsive" style="padding: 34px 0 0 0;">
-        <app-select [inputData]="forms['Tarefa'].props.get('Dia')"></app-select>
-        <app-select [inputData]="forms['Tarefa'].props.get('Semana')"></app-select>
+        <app-select
+          [inputData]="forms['Tarefa'].props.get('Dia')"
+          (selected)="setCampos = $event"
+        ></app-select>
+        <app-select
+          [inputData]="forms['Tarefa'].props.get('Mês')"
+          (selected)="setCampos = $event"
+        ></app-select>
+        <app-select
+          [inputData]="forms['Tarefa'].props.get('Horas')"
+          (selected)="setCampos = $event"
+        ></app-select>
       </div>
 
       <div style="margin-top: 25px;">

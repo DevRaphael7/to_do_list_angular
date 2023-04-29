@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import '/src/styles/colors.scss';
 
 * {
   margin: 0;
@@ -17,6 +18,8 @@
 body {
   width: 100%;
   height: 100%;
+
+  overflow: hidden;
 }
 
 .row {
@@ -48,4 +51,26 @@ body {
   // @media screen and (max-width: 500px) {
   //   flex-direction: column;
   // }
+}
+
+#infos-card {
+
+  margin-top: 5px;
+
+  @extend .row;
+
+  justify-content: space-between;
+
+  width: 100%;
+  color: #434D63;
+
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+  b {
+    color: $secondary-color;
+  }
 }

@@ -3,26 +3,44 @@
 @mixin showSelected {
   span {
     display: block;
-    background-color: $primary-color;
   }
 }
 
 .container {
-  padding: 5px;
   width: 100%;
 
-  border: 1px solid $weak-white;
-
-  margin: 5.5px;
-
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+
+  margin-top: 25px;
+
+  .tab-cont {
+    padding: 5px;
+    width: 99%;
+    border: 1px solid $weak-white;
+
+    margin: 5.5px;
+
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fdfdfd;
+  }
 
   @media screen and (max-width: 500px) {
     justify-content: center;
+  }
+
+  .option-group {
+    overflow: hidden;
+
+    width: calc(80% - 10px);
+    margin-bottom: 20px;
+
+    // overflow-x: scroll;
   }
 
   .option-group, .filter-group {
@@ -37,15 +55,20 @@
     font-weight: bold;
     max-width: 97px;
 
+    margin: 0 38px;
+
     text-align: center;
 
     p { margin-bottom: 5px ;}
 
     span {
-      display: none;
-      width: 100%;
+      background-color: $secondary-color;
+      width: 30px;
       height: 2px;
-      border-radius: 0 0 10px 10px;
+
+      margin: 0 auto;
+
+      display: none;
     }
 
     &.active {

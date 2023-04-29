@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DateUtil } from 'src/core/services/date-util/date-util.service';
 
 @Component({
   selector: 'app-tab-navigation',
   templateUrl: './tab-navigation.component.html',
   styleUrls: ['./tab-navigation.component.scss']
 })
-export class TabNavigationComponent {
+export class TabNavigationComponent implements OnInit {
 
-  options: Set<string>;
+  @Input() options: Set<string>;
 
   currentOptionSelected = ''
 
-  constructor() {
-    this.options = new Set()
-
-    this.options.add('Python')
-    this.options.add('Java')
-    this.options.add('C#')
+  ngOnInit(): void {
+    if(!this.options) {
+      this.options = new Set()
+    }
   }
 
 }

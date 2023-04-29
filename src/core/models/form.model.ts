@@ -23,7 +23,7 @@ export class FormModel extends ModelMain<Map<string | number, InputModel>> {
     while(!values.done) {
       const field = this.props.get(values.value)
 
-      fieldsValues.set(values.value, field.props.value)
+      fieldsValues.set(values.value, field.props.type === 'select' ? null : field.props.value)
 
       values = iterator.next()
     }
@@ -32,8 +32,20 @@ export class FormModel extends ModelMain<Map<string | number, InputModel>> {
   }
 
   validator(props: Map<string | number, string | number>) {
-    const validated = FormService.create()
+    const validated = FormService.create(this.keysIgnore())
     const status = validated.validator(props)
     return status
+  }
+
+  keysIgnore(): string[] {
+    const ignoreKeys: string[] = []
+
+    for(const key of this.props.values()) {
+      if(!key.props.required) {
+        ignoreKeys.push(String(key.getId))
+      }
+    }
+
+    return ignoreKeys
   }
 }

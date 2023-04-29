@@ -1,3 +1,5 @@
+import * as moment from 'moment'
+
 export class DateUtil {
 
   private constructor() {
@@ -49,6 +51,19 @@ export class DateUtil {
     return [hora, minutos]
   }
 
+  getMounthByNumber(arg: number) {
+    let num = 1;
+    for(const mouth of this.allMouth()) {
+      if(num === arg) {
+        return mouth
+      } else {
+        num++;
+      }
+    }
+
+    return undefined;
+  }
+
   allStrWeek() {
     return ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
   }
@@ -67,4 +82,46 @@ export class DateUtil {
 
     return days;
   }
+
+  getNumberMouthByText(str: string): number {
+    const meses: { [key: string]: number } = {
+      "Janeiro": 1,
+      "Fevereiro": 2,
+      "Março": 3,
+      "Abril": 4,
+      "Maio": 5,
+      "Junho": 6,
+      "Julho": 7,
+      "Agosto": 8,
+      "Setembro": 9,
+      "Outubro": 10,
+      "Novembro": 11,
+      "Dezembro": 12
+    };
+
+    for(const key in meses) {
+      if(key === str) {
+        return meses[key]
+      }
+    }
+    return -1
+  }
+
+  calculateTime(dateProp: string, hourProp: string) {
+    const dateFormat = dateProp.split('/').reverse().join('-')
+
+    const date = new Date(`${dateFormat}T${hourProp}`);
+
+    const now = moment()
+
+    const diff = moment.duration(now.diff(date));
+
+    const yeahs = diff.years();
+    const mounth = diff.months()
+    const dias = diff.days();
+    const minutos = diff.minutes();
+
+    return [yeahs, mounth, dias, minutos].map(e => Math.abs(e))
+  }
+
 }

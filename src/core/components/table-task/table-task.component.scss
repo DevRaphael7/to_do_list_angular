@@ -1,15 +1,13 @@
 @import '/src/styles/colors.scss';
 
+
 section {
   width: 100%;
-  height: 40%;
+  max-height: 100%;
 
   position: relative;
-
   overflow: auto;
-
   padding: 10px;
-
   background-color: $weak-white;
 
   .row-week {
@@ -18,11 +16,22 @@ section {
 
     margin-left: 5rem;
 
+    .column {
+      .row-divider {
+        height: 100%;
+        width: 1px;
+        background-color: #EDEFF3;
+
+        margin-top: 30px;
+
+        position: absolute;
+      }
+    }
+
     p {
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 2px;
-
       margin-right: 8rem;
     }
   }
@@ -33,7 +42,7 @@ section {
     p {
       font-size: 12px;
       font-weight: bold;
-      margin-top: 38px;
+      margin-top: 40px;
 
       &.disable {
         color: #E0E2E8;
@@ -43,13 +52,8 @@ section {
 
   .card-task {
     position: absolute;
+
+    margin-left: 10px;
+    z-index: 999999999;
   }
-}
-
-.margin-08 {
-  margin-top: 38px;
-}
-
-.margin-09 {
-  margin-top: 10px;
 }
