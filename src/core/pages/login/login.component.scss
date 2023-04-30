@@ -1,0 +1,53 @@
+@import '/src/styles/colors.scss';
+
+section {
+  background-color: #EDF1F7;
+
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+
+  .container {
+    height: 560px;
+    width: 600px;
+    background-color: #fff;
+
+    box-shadow: 5px 10px 10px rgba($text-big-color, 0.3);
+
+    margin: 0 auto;
+
+    padding: 70px;
+
+    border-radius: 10px;
+
+    z-index: 1;
+
+    .img-header{
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-text {
+      text-align: center;
+
+      .welcome {
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: $text-big-color;
+      }
+
+      .please {
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-middle-color;
+      }
+    }
+  }
+}

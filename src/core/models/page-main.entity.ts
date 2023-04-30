@@ -3,6 +3,7 @@ import { StoreI, ToastStoreI } from "../ngrx/models/store.interface"
 import { alertProps, toastProps } from "../ngrx/actions/ux.actions";
 import { formProps } from "../ngrx/actions/form.actions";
 import { FormModel } from "./form.model";
+import { Router } from "@angular/router";
 
 //Será a interface que vai conter todos os métodos para usar os components relacionados a experiência do usuário.
 interface UxPropsI {
@@ -17,15 +18,22 @@ interface UxPropsI {
   }
 }
 
-export abstract class PageMain {
+
+interface PageMainI {
+  navegateToPage(route: string): void
+}
+
+export abstract class PageMain implements PageMainI {
 
   protected ux: UxPropsI;
 
   //Meus formulários
   protected forms: { [key: string]: FormModel }
 
-  constructor(private store: Store<StoreI>) {
-
+  constructor(
+    private store: Store<StoreI>,
+    private router: Router
+  ) {
     this.forms = { }
 
     this.ux = {
@@ -46,4 +54,10 @@ export abstract class PageMain {
       }
     }
   }
+
+  navegateToPage(route: string): void {
+    this.router.navigateByUrl(route)
+  }
+
+
 }

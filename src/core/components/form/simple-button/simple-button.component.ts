@@ -4,10 +4,7 @@ import { rubberBandOnEnterAnimation } from 'angular-animations';
 @Component({
   selector: 'app-simple-button',
   templateUrl: './simple-button.component.html',
-  styleUrls: ['./simple-button.component.scss'],
-  animations: [
-    rubberBandOnEnterAnimation({ anchor: 'rubber'})
-  ]
+  styleUrls: ['./simple-button.component.scss']
 })
 export class SimpleButtonComponent {
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TaskDB } from 'src/core/cache/task';
 import { TaskEntity } from 'src/core/entities/task.entity';
@@ -19,8 +20,8 @@ export class HomeComponent extends PageMain {
   taskDb: TaskDB;
   dateUtil: DateUtil
 
-  constructor(store: Store<StoreI>) {
-    super(store)
+  constructor(store: Store<StoreI>, router: Router) {
+    super(store, router)
 
     this.forms["Tarefa"] = FormModel.create(new Map<string | number, InputModel>)
 
@@ -79,7 +80,31 @@ export class HomeComponent extends PageMain {
     this.taskDb = new TaskDB()
   }
 
-  saveTaskDb() {
+  set setCampos(event: { key: string | number, e: string | number }) {
+    this.campos.set(event.key, event.e)
+  }
+
+  send() {
+    const status = this.forms["Tarefa"].validator(this.campos)
+
+    if(status) {
+      this.ux.form.emitterForm(true)
+    } else {
+      this.saveTaskDb()
+      .then(() => {
+        this.ux.alert.emitterAlert('form-tarefa', false)
+        this.ux.toast.emitterToast({
+          message: 'Tarefa criada.',
+          positionHorizontal: 'rigth',
+          positionVertical: 'top',
+          show: true,
+          type: 'warning'
+        })
+      })
+    }
+  }
+
+  async saveTaskDb() {
     const mes = this.dateUtil.getNumberMouthByText(this.campos.get('Mês'))
 
     const task = {
@@ -94,28 +119,6 @@ export class HomeComponent extends PageMain {
     }
 
     this.taskDb.setNewTask(TaskEntity.create(task))
-  }
-
-  set setCampos(event: { key: string | number, e: string | number }) {
-    this.campos.set(event.key, event.e)
-  }
-
-  send() {
-    const status = this.forms["Tarefa"].validator(this.campos)
-
-    if(status) {
-      this.ux.form.emitterForm(true)
-    } else {
-      this.saveTaskDb()
-      this.ux.alert.emitterAlert('form-tarefa', false)
-      this.ux.toast.emitterToast({
-        message: 'Tarefa criada.',
-        positionHorizontal: 'rigth',
-        positionVertical: 'top',
-        show: true,
-        type: 'warning'
-      })
-    }
   }
 
   openForm() {
