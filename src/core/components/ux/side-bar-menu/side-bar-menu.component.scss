@@ -6,7 +6,11 @@ $bg-select: #F4F6FA;
 
   transition: all 0.3s ease;
 
-  &.min {
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 1020px) {
     width: 83px;
     text-align: center;
 
@@ -24,6 +28,7 @@ $bg-select: #F4F6FA;
       li {
         a {
           display: none;
+          opacity: 0;
         }
 
         .fa-angles-right {
@@ -45,6 +50,7 @@ $bg-select: #F4F6FA;
   // position: absolute;
   // top: 0;
   // left: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   box-shadow: 2px 5px 5px rgba($color: $grey-color, $alpha: .2);
 

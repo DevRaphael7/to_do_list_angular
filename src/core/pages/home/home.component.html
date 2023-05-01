@@ -1,15 +1,15 @@
 <app-side-bar-menu>
   <section id="page">
+    <app-header></app-header>
 
-    <header>
-      <p class="text-head">To Do List</p>
+    <div class="add-task-btn">
       <app-simple-button [customStyles]="'width: 132px'" (putEvent)="openForm()">
         <div class="new_task_button">
           <i class="fa-solid fa-plus"></i>
           <span>Nova tarefa</span>
         </div>
       </app-simple-button>
-    </header>
+    </div>
 
     <app-tab-navigation>
       <div id="filterGroup">

@@ -7,10 +7,5 @@ import { Component } from '@angular/core';
 })
 export class SideBarMenuComponent {
 
-  show = false;
-
-  openSideMenu() {
-    this.show = !this.show;
-  }
 
 }

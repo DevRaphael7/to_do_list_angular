@@ -12,6 +12,7 @@ import { TableTaskComponent } from '../components/table-task/table-task.componen
 import { CardComponent } from "./ux/card/card.component";
 import { ProgressBarComponent } from "./ux/progress-bar/progress-bar.component";
 import { SideBarMenuComponent } from "./ux/side-bar-menu/side-bar-menu.component";
+import { HeaderComponent } from './ux/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SideBarMenuComponent } from "./ux/side-bar-menu/side-bar-menu.component
     TableTaskComponent,
     CardComponent,
     ProgressBarComponent,
-    SideBarMenuComponent
+    SideBarMenuComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { SideBarMenuComponent } from "./ux/side-bar-menu/side-bar-menu.component
     CardComponent,
     SelectComponent,
     ProgressBarComponent,
-    SideBarMenuComponent
+    SideBarMenuComponent,
+    HeaderComponent
   ]
 })
 export class ComponentsModule { }
