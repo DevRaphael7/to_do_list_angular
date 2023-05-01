@@ -41,6 +41,6 @@ export class TaskDB {
 
     const currentHour = Number(hour.split(":")[0])
 
-    return (yValue * ((currentHour - 8))) + 40
+    return (yValue * ((currentHour - 8))) + 45
   }
 }

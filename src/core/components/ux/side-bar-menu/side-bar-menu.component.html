@@ -1,0 +1,33 @@
+
+<div style="display: flex;">
+  <div class="sidebar {{show ? '' : 'min'}}">
+    <i class="fa-solid fa-bars" (click)="openSideMenu()"></i>
+
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input placeholder="Pesquisar">
+    </div>
+
+    <ul class="menu">
+      <li class="menu-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <a href="#">Agendamento</a>
+        <i class="fa-solid fa-angles-right"></i>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <i class="fa-solid fa-table"></i>
+            <a>Tabela</a>
+          </li>
+          <li class="submenu-item">
+            <i class="fa-solid fa-clock"></i>
+            <a>To Do List</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+  <ng-content select="#page"></ng-content>
+
+</div>

@@ -1,32 +1,33 @@
 <section>
+
   <div class="container">
+    <app-progress-bar [progress]="40"></app-progress-bar>
+    <div style="margin-top: 10px;"></div>
 
-      <div style="margin-top: 10px;"></div>
+    <div class="img-header">
+      <img src="../../../assets/icons/task.png" width="84">
+    </div>
 
-      <div class="img-header">
-        <img src="../../../assets/icons/task.png" width="84">
+    <div class="header-text">
+      <p class="welcome">Bem-vindo.</p>
+      <p class="please">Porfavor, insira suas informações.</p>
+    </div>
+
+    <form [@slideRight]>
+      <div style="margin-top: 30px; display: grid; gap: 10px">
+        <app-input-form
+          [inputData]="forms['Login'].props.get('Username')"
+          (values)="setCampos = $event"
+        ></app-input-form>
+        <app-input-form
+          [inputData]="forms['Login'].props.get('Senha')"
+          (values)="setCampos = $event"
+        ></app-input-form>
       </div>
 
-      <div class="header-text">
-        <p class="welcome">Bem-vindo.</p>
-        <p class="please">Porfavor, insira suas informações.</p>
-      </div>
-
-      <form [@slideRight]>
-        <div style="margin-top: 30px; display: grid; gap: 10px">
-          <app-input-form
-            [inputData]="forms['Login'].props.get('Username')"
-            (values)="setCampos = $event"
-          ></app-input-form>
-          <app-input-form
-            [inputData]="forms['Login'].props.get('Senha')"
-            (values)="setCampos = $event"
-          ></app-input-form>
-        </div>
-
-        <app-simple-button customStyles="margin-top: 50px;" (putEvent)="send()">
-          Login
-        </app-simple-button>
-      </form>
+      <app-simple-button customStyles="margin-top: 50px;" (putEvent)="send()">
+        Login
+      </app-simple-button>
+    </form>
   </div>
 </section>

@@ -2,8 +2,8 @@
   <div class="row-week">
     <div *ngFor="let day of dateUtil.allDaysOfCurrentMouth()" class="column">
       <p>{{day}}</p>
-      <div style="position: relative;">
-        <app-card
+      <div class="row-divider-up"></div>
+      <app-card
           *ngFor="let task of taskDb.getTasks() | keyvalue"
           [hidden]="task.value.day !== day"
           [title]="task.value.name"
@@ -16,7 +16,6 @@
             <p>{{task.value.hour}} - {{task.value.weekStr}} de {{task.value.date.split('/')[2]}}. <b>{{ task.value.diff }}</b></p>
           </div>
         </app-card>
-      </div>
       <div class="row-divider"></div>
     </div>
   </div>

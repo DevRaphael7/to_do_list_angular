@@ -10,6 +10,8 @@ import { TabNavigationComponent } from "./ux/tab-navigation/tab-navigation.compo
 import { SelectComponent } from "./form/select/select.component";
 import { TableTaskComponent } from '../components/table-task/table-task.component';
 import { CardComponent } from "./ux/card/card.component";
+import { ProgressBarComponent } from "./ux/progress-bar/progress-bar.component";
+import { SideBarMenuComponent } from "./ux/side-bar-menu/side-bar-menu.component";
 
 @NgModule({
   declarations: [
@@ -22,10 +24,13 @@ import { CardComponent } from "./ux/card/card.component";
     TabNavigationComponent,
     SelectComponent,
     TableTaskComponent,
-    CardComponent
+    CardComponent,
+    ProgressBarComponent,
+    SideBarMenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
   ],
   exports: [
     ToastComponent,
@@ -38,6 +43,8 @@ import { CardComponent } from "./ux/card/card.component";
     TableTaskComponent,
     CardComponent,
     SelectComponent,
+    ProgressBarComponent,
+    SideBarMenuComponent
   ]
 })
 export class ComponentsModule { }

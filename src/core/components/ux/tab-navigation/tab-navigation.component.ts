@@ -6,16 +6,7 @@ import { DateUtil } from 'src/core/services/date-util/date-util.service';
   templateUrl: './tab-navigation.component.html',
   styleUrls: ['./tab-navigation.component.scss']
 })
-export class TabNavigationComponent implements OnInit {
+export class TabNavigationComponent {
 
-  @Input() options: Set<string>;
-
-  currentOptionSelected = ''
-
-  ngOnInit(): void {
-    if(!this.options) {
-      this.options = new Set()
-    }
-  }
 
 }

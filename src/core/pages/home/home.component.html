@@ -1,78 +1,77 @@
+<app-side-bar-menu>
+  <section id="page">
 
-<section>
+    <header>
+      <p class="text-head">To Do List</p>
+      <app-simple-button [customStyles]="'width: 132px'" (putEvent)="openForm()">
+        <div class="new_task_button">
+          <i class="fa-solid fa-plus"></i>
+          <span>Nova tarefa</span>
+        </div>
+      </app-simple-button>
+    </header>
 
-  <header>
-    <p class="text-head">To Do List</p>
-    <app-simple-button [customStyles]="'width: 132px'" (putEvent)="openForm()">
-      <div class="new_task_button">
-        <i class="fa-solid fa-plus"></i>
-        <span>Nova tarefa</span>
-      </div>
-    </app-simple-button>
-  </header>
-
-  <app-tab-navigation>
-    <div id="filterGroup">
-      <app-select
-        [inputData]="forms['Tarefa'].props.get('Dia')"
-        (selected)="setCampos = $event"
-      ></app-select>
-      <app-select
-        [inputData]="forms['Tarefa'].props.get('Semana')"
-        (selected)="setCampos = $event"
-      ></app-select>
-    </div>
-  </app-tab-navigation>
-
-  <div style="margin: 20px;"></div>
-
-  <app-table-task></app-table-task>
-
-  <app-alert
-    key="form-tarefa"
-    [showOverlay]="true"
-    [bgModal]="'#F9FBFC'"
-    [borderRadius]="'2px'"
-    [styles]="'padding: 30px;'"
-  >
-    <ng-container id="mdl" class="form-container">
-      <p class="text-head">Nova Tarefa</p>
-
-      <div class="row responsive" style="padding: 34px 0 0 0;">
+    <app-tab-navigation>
+      <div id="filterGroup">
         <app-select
           [inputData]="forms['Tarefa'].props.get('Dia')"
           (selected)="setCampos = $event"
         ></app-select>
         <app-select
-          [inputData]="forms['Tarefa'].props.get('Mês')"
-          (selected)="setCampos = $event"
-        ></app-select>
-        <app-select
-          [inputData]="forms['Tarefa'].props.get('Horas')"
+          [inputData]="forms['Tarefa'].props.get('Semana')"
           (selected)="setCampos = $event"
         ></app-select>
       </div>
+    </app-tab-navigation>
 
-      <div style="margin-top: 25px;">
-        <app-input-form
-          [inputData]="forms['Tarefa'].props.get('Nome')"
-          (values)="setCampos = $event"
-        ></app-input-form>
-        <app-simple-text-area
-          [inputData]="forms['Tarefa'].props.get('Desc')"
-          (values)="setCampos = $event"
-        ></app-simple-text-area>
-      </div>
+    <app-table-task></app-table-task>
 
-      <div id="btn-content">
-        <app-simple-button (putEvent)="this.ux.alert.emitterAlert('form-tarefa', false)" [cancelBtn]="true" [customStyles]="'margin-right: 10px;'">
-          Cancelar
-        </app-simple-button>
-        <app-simple-button [customStyles]="'width: 200px; border-radius: 10px;'" (putEvent)="send()">
-          Salvar
-        </app-simple-button>
-      </div>
-    </ng-container>
-  </app-alert>
+    <app-alert
+      key="form-tarefa"
+      [showOverlay]="true"
+      [bgModal]="'#F9FBFC'"
+      [borderRadius]="'2px'"
+      [styles]="'padding: 30px;'"
+    >
+      <ng-container id="mdl" class="form-container">
+        <p class="text-head">Nova Tarefa</p>
 
-</section>
+        <div class="row responsive" style="padding: 34px 0 0 0;">
+          <app-select
+            [inputData]="forms['Tarefa'].props.get('Dia')"
+            (selected)="setCampos = $event"
+          ></app-select>
+          <app-select
+            [inputData]="forms['Tarefa'].props.get('Mês')"
+            (selected)="setCampos = $event"
+          ></app-select>
+          <app-select
+            [inputData]="forms['Tarefa'].props.get('Horas')"
+            (selected)="setCampos = $event"
+          ></app-select>
+        </div>
+
+        <div style="margin-top: 25px;">
+          <app-input-form
+            [inputData]="forms['Tarefa'].props.get('Nome')"
+            (values)="setCampos = $event"
+          ></app-input-form>
+          <app-simple-text-area
+            [inputData]="forms['Tarefa'].props.get('Desc')"
+            (values)="setCampos = $event"
+          ></app-simple-text-area>
+        </div>
+
+        <div id="btn-content">
+          <app-simple-button (putEvent)="this.ux.alert.emitterAlert('form-tarefa', false)" [cancelBtn]="true" [customStyles]="'margin-right: 10px;'">
+            Cancelar
+          </app-simple-button>
+          <app-simple-button [customStyles]="'width: 200px; border-radius: 10px;'" (putEvent)="send()">
+            Salvar
+          </app-simple-button>
+        </div>
+      </ng-container>
+    </app-alert>
+
+  </section>
+</app-side-bar-menu>
